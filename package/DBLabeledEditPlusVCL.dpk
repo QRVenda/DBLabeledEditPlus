@@ -1,0 +1,69 @@
+{---------------------------------------------------------------------------+
+|                                                                           |
+|  Unit.........: DBLabeledEditPlus.pas                                     |
+|  Componente...: "DBLabeledEditPlus"                                       |
+|  Herança......: "TDBLabeledEdit" (nativo do Delphi)                       |
+|  Descrição....: Componente de pesquisa. As funcionalidades extras estão   |
+|                 na propriedade "Configurar"                               |
+|                                                                           |
+|  Data.........: 15/07/2024 - 22:03h                                       |
+|  Autoria......: Adriano Zanini                                            |
+|                                                                           |
++---------------------------------------------------------------------------}
+
+package DBLabeledEditPlusVCL;
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TDBEditDialog - Componente de pesquisa'}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  designide,
+  dbrtl,
+  vcldb,
+  FireDAC,
+  FireDACCommonDriver,
+  FireDACCommon,
+  vclimg,
+  vclFireDAC,
+  FireDACIBDriver,
+  ACBr_Comum,
+  ACBr_synapse,
+  ACBr_OpenSSL,
+  ACBr_TCP;
+
+contains
+  DBLabeledEditPlus in '..\src\DBLabeledEditPlus.pas',
+  DBLabeledEditPlusConst in '..\src\DBLabeledEditPlusConst.pas',
+  DBLabeledEditPlusEditor in '..\src\DBLabeledEditPlusEditor.pas',
+  DBLabeledEditPlusStruct in '..\src\DBLabeledEditPlusStruct.pas',
+  FDBLabeledEditPlusConfig in '..\src\FDBLabeledEditPlusConfig.pas' {FrmConfigurarCampos},
+  FDBLabeledEditPlusPesquisar in '..\src\FDBLabeledEditPlusPesquisar.pas' {FrmDBLabeledEditPlusPesquisar},
+  DBLabeledEditPlusUtils in '..\src\DBLabeledEditPlusUtils.pas';
+
+end.
